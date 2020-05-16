@@ -8,6 +8,15 @@ let rate = null;
 function calculate(){
     const billAmount = Number(document.getElementById("bill-amount").value);
     const personNumber = Number(document.getElementById("person-number").value);
+
+    if (billAmount === ""){
+        alert("Please enter your bill amount.");
+        billAmount.focus();
+        return false;
+
+    }
+
+
     if (rateService.disabled == false){
         serviceRate();
         total = (billAmount + billAmount*rate)/personNumber;
@@ -18,7 +27,7 @@ function calculate(){
         total = billAmount / personNumber;
     }
     
-    output.textContent = total.toFixed(2);
+    output.textContent = "$ " + total.toFixed(2);
     //output.style.visibility = 'visible';
 }
 
