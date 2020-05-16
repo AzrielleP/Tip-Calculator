@@ -6,11 +6,11 @@ let total = 0;
 let rate = null;
 
 function calculate(){
-    const billAmount = document.getElementById("bill-amount").value;
-    const personNumber = document.getElementById("person-number").value;
+    const billAmount = Number(document.getElementById("bill-amount").value);
+    const personNumber = Number(document.getElementById("person-number").value);
     if (rateService.disabled == false){
         serviceRate();
-        total = (billAmount + (billAmount*rate))/personNumber;
+        total = (billAmount + billAmount*rate)/personNumber;
 
     }
     else{ 
@@ -18,8 +18,8 @@ function calculate(){
         total = billAmount / personNumber;
     }
     
-    output.textContent = total;
-    output.style.visibility = 'visible';
+    output.textContent = total.toFixed(2);
+    //output.style.visibility = 'visible';
 }
 
 calc.addEventListener('click', calculate);
@@ -32,7 +32,7 @@ function serviceRate(){
     const choice = rateService.value;
 
     switch(choice){
-        case "excellent ":
+        case "excellent":
             rate = 0.3;
             break;
         case "good":
