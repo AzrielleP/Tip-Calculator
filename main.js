@@ -9,18 +9,20 @@ function calculate(){
     const billAmount = Number(document.getElementById("bill-amount").value);
     const personNumber = Number(document.getElementById("person-number").value);
 
-    if (billAmount === ""){
+    if (billAmount == ""){
         alert("Please enter your bill amount.");
-        billAmount.focus();
         return false;
-
     }
 
+    if (personNumber == "" || personNumber == 0){
+        alert("Please enter a valid number of people.");
+        return false;
+    }
 
     if (rateService.disabled == false){
         serviceRate();
-        total = (billAmount + billAmount*rate)/personNumber;
-
+        if (!serviceRate()) return false;
+        else total = (billAmount + billAmount*rate)/personNumber;
     }
     else{ 
         
@@ -37,10 +39,14 @@ calc.addEventListener('click', calculate);
 function enableRate(){
     rateService.disabled = enableTip.checked? false:true;
 }
+
 function serviceRate(){
     const choice = rateService.value;
 
     switch(choice){
+        case "":
+            alert("Please choose from the options.")
+            return false;
         case "excellent":
             rate = 0.3;
             break;

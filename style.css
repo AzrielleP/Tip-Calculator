@@ -47,8 +47,13 @@ h1{
     border: 1px solid #ccc;
 }
 
+.calculator label{
+    font-weight: bold;
+}
+
 .calculator .check{
     display: flex;
+    align-items: center;
 }
 
 .calculator .check > *{
