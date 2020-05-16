@@ -29,12 +29,22 @@
         <ul>
           <li>
             <label for="billAmount">Bill Amount</label>
-            <input type="number" id="bill-amount" name="bill-amount" placeholder = "Enter your bill amount."/>
+            <input
+              type="number"
+              id="billAmount"
+              name="bill-amount"
+              placeholder="Enter your bill amount."
+            />
           </li>
 
           <li>
             <label for="personNumber">How many will split the bill?</label>
-            <input type="number" id="person-number" name="person-number" placeholder = "Enter the number of people."/>
+            <input
+              type="number"
+              id="personNumber"
+              name="person-number"
+              placeholder="Enter the number of people."
+            />
           </li>
 
           <li class="check">
@@ -45,14 +55,14 @@
               onclick="enableRate(this)"
             />
 
-            <label for="enableTip" class="check-label"
-              >Would you like to give tips?</label
-            >
+            <label for="enableTip" class="check-label">
+              Would you like to give tips?
+            </label>
           </li>
 
           <li>
             <label for="rateService">Rate your experience</label>
-            <select id="rate-service" name="rate-service" disabled="disabled">
+            <select id="rateService" name="rate-service" disabled="disabled">
               <option value="" disabled selected hidden
                 >- Please Select -</option
               >
@@ -63,11 +73,10 @@
               <option value="terrible">Terrible (5%)</option>
             </select>
           </li>
-
-          <button type="button" class="submit" />Calculate</button>
-
-          <p class="calculatedResult"></p>
         </ul>
+        <button type="button" class="submit">Calculate</button>
+
+        <p class="calculatedResult"></p>
       </form>
     </div>
   </body>
