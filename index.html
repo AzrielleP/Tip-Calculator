@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Azrielle Pelayo" />
+    <meta
+      name="description"
+      content="A web application that computes a bill is divided among the people"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Tip Calculator</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Tip Calculator</h1>
+
+      <form class="calculator">
+        <ul>
+          <li>
+            <label for="bill-amount">Bill Amount</label>
+            <input type="number" id="bill-amount" name="bill-amount" />
+          </li>
+
+          <li>
+            <label for="person-number">How many will split the bill?</label>
+            <input type="number" id="person-number" name="person-number" />
+          </li>
+
+          <li class="check">
+            <input
+              type="checkbox"
+              id="enableTip"
+              name="enableTip"
+              onclick="enableRate(this)"
+            />
+
+            <label for="enableTip" class="check-label"
+              >Would you like to give tips?</label
+            >
+          </li>
+
+          <li>
+            <label for="rate-service">Rate your experience</label>
+            <select id="rate-service" name="rate-service" disabled="disabled">
+              <option value="" disabled selected hidden
+                >- Please Select -</option
+              >
+              <option value="excellent">Excellent (30%)</option>
+              <option value="good">Good (20%)</option>
+              <option value="okay">It was okay (15%)</option>
+              <option value="bad">Bad (10%)</option>
+              <option value="terrible">Terrible (5%)</option>
+            </select>
+          </li>
+
+          <input type="submit" value="Calculate" class="submit" />
+
+          <p class="calculatedResult"></p>
+        </ul>
+      </form>
+    </div>
+  </body>
+</html>
